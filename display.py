@@ -13,20 +13,32 @@ def display():
         choice = input("Enter your choice: ")
 
         if choice == "1":
-            from python_first_code.signup.signup import signup
+            try:
+                from python_first_code.signup.signup import signup
+            except ModuleNotFoundError:
+                from signup.signup import signup
             signup()
+
         elif choice == "2":
-            from python_first_code.login.login import login
-
+            try:
+                from python_first_code.login.login import login
+            except ModuleNotFoundError:
+                from login.login import login
             login()
-        elif choice == "3":
-            from python_first_code.search.search import search
 
+        elif choice == "3":
+            try:
+                from python_first_code.search.search import search
+            except ModuleNotFoundError:
+                from search.search import search
             search()
+
         elif choice == "4":
             print("Current Date and Time:", datetime.now())
+
         elif choice == "5":
             print("Program closed")
             break
+
         else:
             print("Invalid choice")

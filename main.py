@@ -1,2 +1,2 @@
-from python_first_code.display import display
+from display import display
 display()
